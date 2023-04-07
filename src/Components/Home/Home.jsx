@@ -7,7 +7,8 @@ const Home = () => {
     const tShirts = useLoaderData();
     const [cart, setCart] = useState([]);
     const handleAddToCart = (tShirt)=>{
-        console.log(tShirt);
+        const newCart = [...cart, tShirt];
+        setCart(newCart);
     }
     return (
         <div className='grid grid-cols-4 gap-10 ms-16 mt-5'>
@@ -21,7 +22,7 @@ const Home = () => {
              } 
              </div>
              <div className='col-span-1'>
-                <Cart ></Cart>
+                <Cart cart ={cart}></Cart>
              </div>
         </div>
     );
